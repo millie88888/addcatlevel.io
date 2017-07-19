@@ -8,13 +8,26 @@
 
     <div>
 
-        <h2 data-bind="text: name"></h2>
-        <div data-bind="text: catlevel"></div>
+        <h2 data-bind="text: currenCat().name"></h2>
+        <div data-bind="text: currenCat().catlevel"></div>
         <br>
-        <div data-bind="text: clickCount"></div>
-        <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
+        <div data-bind="text: currenCat().clickCount"></div>
+        <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src:  currenCat().imgSrc}">
+
+    <h3>Nickname</h3>
+    <ul data-bind="foreach: currenCat().nickName">
+
+    <li>
+        The current cat is: <b data-bind="text: $data"></b>
+    </li>
+    </ul>
+
 
     </div>
+    
+
+
+
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
 </body>
